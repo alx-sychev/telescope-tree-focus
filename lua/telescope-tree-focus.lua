@@ -1,11 +1,11 @@
 local M = {
     find_command = {
-        'fd',
-        '--hidden',
-        '--type',
-        'directory',
-        '--exclude',
-        '.git',
+        "fd",
+        "--hidden",
+        "--type",
+        "directory",
+        "--exclude",
+        ".git",
     },
     prompt_title = "Find Directories",
     expand_focused = true,
@@ -22,11 +22,11 @@ function M.open_tree_and_focus(dir)
 end
 
 function M.attach_mappings(_, map)
-    map('i', '<cr>', function(prompt_bufnr)
-        local selection = require('telescope.actions.state')
+    map("i", "<cr>", function(prompt_bufnr)
+        local selection = require("telescope.actions.state")
             .get_selected_entry()
         local dir = selection.path
-        require('telescope.actions').close(prompt_bufnr)
+        require("telescope.actions").close(prompt_bufnr)
         M.open_tree_and_focus(dir)
         return true
     end)
@@ -34,7 +34,7 @@ function M.attach_mappings(_, map)
 end
 
 function M.open_picker()
-    local telescope = require('telescope.builtin')
+    local telescope = require("telescope.builtin")
     telescope.find_files({
         find_command    = M.find_command,
         prompt_title    = M.prompt_title,

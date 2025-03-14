@@ -25,12 +25,12 @@ With all options:
 local ttf = require("telescope-tree-focus")
 
 ttf.find_command = {
-    'fd',
-    '--hidden',
-    '--type',
-    'directory',
-    '--exclude',
-    '.git',
+    "fd",
+    "--hidden",
+    "--type",
+    "directory",
+    "--exclude",
+    ".git",
 }
 ttf.prompt_title = "Find Directories"
 ttf.expand_focused = true
