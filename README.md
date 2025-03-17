@@ -7,8 +7,8 @@ Supports only nvim-tree.
 
 ## Dependencies
 
-- nvim-telescope/telescope.nvim
-- nvim-tree/nvim-tree.lua
+- [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
 
 ## Configuration
 
