@@ -22,14 +22,16 @@ function M.open_tree_and_focus(dir)
 end
 
 function M.attach_mappings(_, map)
-    map("n", "<cr>", function(prompt_bufnr)
+    local handler = function(prompt_bufnr)
         local selection = require("telescope.actions.state")
             .get_selected_entry()
         local dir = selection.path
         require("telescope.actions").close(prompt_bufnr)
         M.open_tree_and_focus(dir)
         return true
-    end)
+    end
+    map("n", "<cr>", handler)
+    map("i", "<cr>", handler)
     return true
 end
 
